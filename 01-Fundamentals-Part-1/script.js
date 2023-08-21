@@ -30,6 +30,7 @@ let job2 = "Teacher";
 console.log(myFirstJob);
 */
 
+/*
 let javascriptIsFun = true;
 console.log(javascriptIsFun);
 
@@ -49,21 +50,73 @@ console.log(typeof year);
 
 // bug - show object
 console.log(typeof null);
+*/
 
+/*
+let age = 30;
+age = 31;
 
+const birthYear = 1991;
+// birthYear = 1990; // we cannot resign
+// const job; // error - not initializing
 
-// Assignments
-let country = "Ukraine";
-let continent = "Europe";
-let population = 30000000;
-// console.log(country);
-// console.log(continent);
-// console.log(population);
+const now = 2037;
+const ageAndrii = now - 1985;
+const ageSarah = now - 2018;
+console.log(ageAndrii, ageSarah);
 
-let isIsland = false;
-let language;
-console.log(typeof isIsland);
-console.log(typeof population);
-console.log(typeof country);
-console.log(typeof language);
+console.log(ageAndrii * 2, ageAndrii / 10, 2**3);
+// 2 ** 3 means 2 to the power 3 = 2 * 2 * 2
 
+const firstName = "Andrii";
+const lastName = "Mysaka";
+console.log(firstName + " " + lastName);
+
+// Assignment operators
+let x = 10 + 5; // 15
+x += 10; // x = x + 10 = 25
+x *= 4; // x = x * 4 = 100
+x++; // x = x + 1
+x-- // x = x - 1
+x /= 10
+console.log(x);
+
+// Comparison operators
+console.log(ageAndrii > ageSarah); // >, <, >=, <=
+console.log(ageSarah >= 18);
+
+const isFullAge = ageSarah >= 18;
+*/
+
+/*
+// Operator precedence
+const now = 2037;
+const ageAndrii = now - 1985;
+const ageSarah = now - 2018;
+
+console.log(now - 1991 > now - 2018)
+
+let x, y;
+x = y = 25 - 10 - 5; // x = y = 10, x = 10
+console.log(x, y);
+
+const averageAge = (ageAndrii + ageSarah) / 2;
+console.log(ageAndrii, ageSarah, averageAge);
+*/
+
+const firsName = "Andrii";
+const job = "programmer";
+const birthYear = 1985;
+const year = 2023;
+
+const andrii = "I'm " + firsName + ", a " + (year - birthYear) + " years old " + job + "!";
+console.log(andrii);
+
+const andriiNew = `I'm ${firsName}, a ${year - birthYear} years old ${job}!`
+console.log(andriiNew);
+
+console.log(`Just a regular string...`);
+
+console.log(`String 
+multiple
+lines`);
