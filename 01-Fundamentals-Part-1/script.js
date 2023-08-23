@@ -104,6 +104,7 @@ const averageAge = (ageAndrii + ageSarah) / 2;
 console.log(ageAndrii, ageSarah, averageAge);
 */
 
+/*
 const firsName = "Andrii";
 const job = "programmer";
 const birthYear = 1985;
@@ -120,3 +121,74 @@ console.log(`Just a regular string...`);
 console.log(`String 
 multiple
 lines`);
+*/
+
+/*
+const age = 19;
+const isOldEnough = age >= 18;
+
+if (isOldEnough) {
+    console.log("Sarah can start driving license 🚗");
+} else {
+    const yearsLeft = 18 - age;
+    console.log(`Sarah is too young. Wait another
+    ${yearsLeft} ears :)`);
+}
+
+const birthYear = 2012;
+let century;
+if (birthYear <= 2000) {
+    century = 20;
+} else {
+    century = 21;
+}
+console.log(century);
+*/
+
+/*
+// type conversion
+const inputYear = "1991";
+console.log(inputYear + 18);
+console.log(Number(inputYear)+ 18);
+console.log(Number("Andrii"));
+console.log(String(23));
+
+// type coercion
+console.log("I am " + 23 + " years old")
+console.log("I am " + "23" + " years old")
+console.log("23" - "10" -3) //10
+console.log("23" + "10" +3) //23103
+console.log("23" * "2" ) //46
+*/
+
+/*
+// 5 falsy values: 0, ''. undefined, null, NaN
+console.log(Boolean(0));
+console.log(Boolean(undefined));
+console.log(Boolean(''));
+console.log(Boolean("Andrii"));
+console.log(Boolean({}));
+
+const money = 0;
+if(money){
+    console.log("Don't spend it all");
+}else{
+    console.log("You should get a job!");
+}
+
+let height;
+if(height){
+    console.log("height is defined");
+}else{
+    console.log("height is Undefined");
+}
+*/
+
+const age = 18;
+if(age === 18) console.log("You just become adult");
+if(age == 18) console.log("You just become adult");
+
+// "18" == 18 //true
+// "18" === 18 //false
+
+
