@@ -230,10 +230,10 @@ const checkDogs = function(dogsJulia, dogsKate){
 checkDogs([9, 16, 6, 8, 3], [10, 5, 6, 1, 4]);
 
  */
-
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 ///////////////////////////////////////
 // The map Method
-const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+/*
 const eurToUsd = 1.1;
 
 // const movementsUSD = movements.map(function(mov){
@@ -256,3 +256,20 @@ const movementsDescriptions = movements.map((mov, i) =>
 );
 
 console.log(movementsDescriptions);
+
+ */
+
+///////////////////////////////////////
+// The filter Method
+const deposits = movements.filter(function (mov, i, arr) {
+  return mov > 0;
+});
+console.log(movements);
+console.log(deposits);
+
+const depositsFor = [];
+for (const mov of movements) if (mov > 0) depositsFor.push(mov);
+console.log(depositsFor);
+
+const withdrawals = movements.filter(mov => mov < 0);
+console.log(withdrawals);
