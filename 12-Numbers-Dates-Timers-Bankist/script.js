@@ -430,7 +430,7 @@ console.log(10 / 3);
 
 ///////////////////////////////////////
 // Creating Dates
-
+/*
 // Create a date
 
 const now = new Date();
@@ -466,3 +466,16 @@ console.log(Date.now());
 
 future.setFullYear(2040);
 console.log(future);
+
+ */
+
+///////////////////////////////////////
+// Operations With Dates
+const future = new Date(2037, 10, 19, 15, 23);
+console.log(+future);
+
+const calcDaysPassed = (date1, date2) =>
+  Math.abs(date2 - date1) / (1000 * 60 * 60 * 24);
+
+const days1 = calcDaysPassed(new Date(2037, 3, 4), new Date(2037, 3, 14));
+console.log(days1);
