@@ -77,7 +77,7 @@ document
 
 ///////////////////////////////////////
 // Styles, Attributes and Classes
-
+/*
 // Styles
 message.style.backgroundColor = '#37383d';
 message.style.width = '120%';
@@ -89,7 +89,7 @@ console.log(getComputedStyle(message).color);
 console.log(getComputedStyle(message).height);
 
 message.style.height =
-  Number.parseFloat(getComputedStyle(message).height, 10) + 30 + 'px';
+  Number.parseFloat(getComputedStyle(message).height) + 30 + 'px';
 
 document.documentElement.style.setProperty('--color-primary', 'orangered');
 
@@ -101,7 +101,7 @@ console.log(logo.className);
 logo.alt = 'Beautiful minimalist logo';
 
 // Non-standard
-console.log(logo.designer);
+// console.log(logo.designer);
 console.log(logo.getAttribute('designer'));
 logo.setAttribute('company', 'Bankist');
 
@@ -139,5 +139,31 @@ setTimeout(() => h1.removeEventListener('mouseenter', alertH1), 3000);
 // h1.onmouseenter = function (e) {
 //   alert('onmouseenter: Great! You are reading the heading :D');
 // };
+*/
 
+///////////////////////////////////////
+// Event Propagation in Practice
+const randomInt = (min, max) =>
+  Math.floor(Math.random() * (max - min + 1) + min);
+const randomColor = () =>
+  `rgb(${randomInt(0, 255)},${randomInt(0, 255)},${randomInt(0, 255)})`;
+
+document.querySelector('.nav__link').addEventListener('click', function (e) {
+  this.style.backgroundColor = randomColor();
+  console.log('LINK', e.target, e.currentTarget);
+  console.log(e.currentTarget === this);
+
+  // Stop propagation
+  // e.stopPropagation();
+});
+
+document.querySelector('.nav__links').addEventListener('click', function (e) {
+  this.style.backgroundColor = randomColor();
+  console.log('CONTAINER', e.target, e.currentTarget);
+});
+
+document.querySelector('.nav').addEventListener('click', function (e) {
+  this.style.backgroundColor = randomColor();
+  console.log('NAV', e.target, e.currentTarget);
+});
 
