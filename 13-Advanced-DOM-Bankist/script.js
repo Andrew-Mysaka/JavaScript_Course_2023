@@ -7,6 +7,8 @@ const modal = document.querySelector('.modal');
 const overlay = document.querySelector('.overlay');
 const btnCloseModal = document.querySelector('.btn--close-modal');
 const btnsOpenModal = document.querySelectorAll('.btn--show-modal');
+const section1 = document.querySelector('#section--1');
+const nav = document.querySelector('.nav');
 
 const openModal = function () {
   modal.classList.remove('hidden');
@@ -201,4 +203,16 @@ console.log(h1.parentElement.children);
   if (el !== h1) {
     el.style.transform = 'scale(0.5)';
   }
+});
+
+///////////////////////////////////////
+// Sticky navigation
+const initialCoords = section1.getBoundingClientRect();
+console.log(initialCoords);
+
+window.addEventListener('scroll', function () {
+  console.log(window.scrollY);
+
+  if (window.scrollY > initialCoords.top) nav.classList.add('sticky');
+  else nav.classList.remove('sticky');
 });
