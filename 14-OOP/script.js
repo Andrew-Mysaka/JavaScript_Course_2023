@@ -27,3 +27,28 @@ const jack = new Person('Jack', 1975);
 
 console.log(andrii instanceof Person);
 
+///////////////////////////////////////
+// Prototypes
+console.log(Person.prototype);
+
+Person.prototype.calcAge =  function() {
+  console.log(2037 - this.birthYear);
+};
+
+andrii.calcAge();
+matilda.calcAge();
+
+console.log(andrii.__proto__);
+console.log(andrii.__proto__ === Person.prototype);
+
+console.log(Person.prototype.isPrototypeOf(andrii)); //true
+console.log(Person.prototype.isPrototypeOf(matilda)); //true
+console.log(Person.prototype.isPrototypeOf(Person)); //false
+
+// .prototypeOfLinkedObjects
+
+Person.prototype.species = 'Homo Sapiens';
+console.log(andrii.species, matilda.species);
+
+console.log(andrii.hasOwnProperty('firstName'));
+console.log(andrii.hasOwnProperty('species'));
