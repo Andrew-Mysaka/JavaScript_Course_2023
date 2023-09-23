@@ -21,7 +21,12 @@ const renderCountry = function (data, className = '') {
   </article>
   `;
   countriesContainer.insertAdjacentHTML('beforeend', html);
-  countriesContainer.style.opacity = 1;
+  // countriesContainer.style.opacity = 1;
+};
+
+const renderError = function (msg) {
+  countriesContainer.insertAdjacentText('beforeend', msg);
+  // countriesContainer.style.opacity = 1;
 };
 
 // https://restcountries.eu/rest/v2/
@@ -118,6 +123,7 @@ setTimeout(() => {
 /////////////////////////////////////////
 // Consuming Promises
 // Chaining Promises
+// Handling Rejected Promises
 
 // const getCountryData = function (country) {
 //   fetch(`https://countries-api-836d.onrender.com/countries/name/${country}`)
@@ -134,7 +140,7 @@ setTimeout(() => {
 const getCountryData = function (country) {
   // Country 1
   fetch(`https://countries-api-836d.onrender.com/countries/name/${country}`)
-    .then((response) => response.json())
+    .then(response => response.json())
     .then(data => {
       renderCountry(data[0]);
       const neighbour = data[0].borders?.[0];
@@ -142,8 +148,17 @@ const getCountryData = function (country) {
       // Country 2
       return fetch(`https://countries-api-836d.onrender.com/countries/alpha/${neighbour}`);
     })
-    .then((response) => response.json())
-    .then(data => renderCountry(data, 'neighbour'));
+    .then(response => response.json())
+    .then(data => renderCountry(data, 'neighbour'))
+    .catch(err => {
+      console.error(`${err} 💥💥💥`);
+      renderError(`Something went wrong 💥💥 ${err.message}. Try again!`);
+    })
+    .finally(() => {
+      countriesContainer.style.opacity = '1';
+    })
 };
 
-getCountryData('portugal');
+btn.addEventListener('click', function () {
+  getCountryData('portugal');
+});
