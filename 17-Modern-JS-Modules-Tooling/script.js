@@ -1,6 +1,6 @@
 ///////////////////////////////////////
 // Exporting and Importing in ES6 Modules
-
+/*
 // Importing module
 // Importing module
 // import { addToCart, totalPrice as price, tq } from './shoppingCart.js';
@@ -23,11 +23,11 @@ add('bread', 5);
 add('apples', 4);
 
 console.log(cart);
-
+*/
 
 ///////////////////////////////////////
 // Top-Level Await
-
+/*
 // console.log('Start fetching');
 // const res = await fetch('https://jsonplaceholder.typicode.com/posts');
 // const data = await res.json();
@@ -83,3 +83,19 @@ ShoppingCart2.addToCart('apple', 4);
 ShoppingCart2.addToCart('pizza', 2);
 console.log(ShoppingCart2);
 console.log(ShoppingCart2.shippingCost);
+*/
+///////////////////////////////////////
+// CommonJS Modules
+/*
+// Export
+export.addTocart = function (product, quantity) {
+  cart.push({ product, quantity });
+  console.log(
+    `${quantity} ${product} added to cart (sipping cost is ${shippingCost})`
+  );
+};
+
+// Import
+const { addTocart } = require('./shoppingCart.js');
+
+ */
